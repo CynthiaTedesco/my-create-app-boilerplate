@@ -1,0 +1,8 @@
+// Bootstrap components
+@import 'bootstrap-overrides';
+@import 'bootstrap/scss/mixins/_breakpoints.scss';
+
+// Configuration
+@import 'configuration/colors';
+@import 'configuration/mixins';
+@import 'configuration/animations';
