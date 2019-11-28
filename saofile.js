@@ -44,65 +44,65 @@ module.exports = {
     })
     validation.errors && validation.errors.length && process.exit(1)
 
-    const actions = [{
-      type: 'add',
-      files: '**',
-      templateDir: 'template/nuxt',
-      filters: {
-        'static/icon.png': 'features.includes("pwa")'
-      }
-    }]
+    // const actions = [{
+    //   type: 'add',
+    //   files: '**',
+    //   templateDir: 'template/nuxt',
+    //   filters: {
+    //     'static/icon.png': 'features.includes("pwa")'
+    //   }
+    // }]
 
-    if (this.answers.ui !== 'none') {
-      actions.push({
-        type: 'add',
-        files: '**',
-        templateDir: `template/frameworks/${this.answers.ui}`
-      })
-    }
+    // if (this.answers.ui !== 'none') {
+    //   actions.push({
+    //     type: 'add',
+    //     files: '**',
+    //     templateDir: `template/frameworks/${this.answers.ui}`
+    //   })
+    // }
 
-    if (this.answers.test !== 'none') {
-      actions.push({
-        type: 'add',
-        files: '**',
-        templateDir: `template/frameworks/${this.answers.test}`
-      })
-    }
+    // if (this.answers.test !== 'none') {
+    //   actions.push({
+    //     type: 'add',
+    //     files: '**',
+    //     templateDir: `template/frameworks/${this.answers.test}`
+    //   })
+    // }
 
-    if (this.answers.server !== 'none') {
-      if (this.answers.server === 'adonis') {
-        const files = {}
-        for (const action of actions) {
-          const options = { cwd: join(rootDir, action.templateDir), dot: true }
-          for (const file of glob.sync(`*`, options)) {
-            files[file] = `resources/${file}`
-          }
-        }
-        files['nuxt.config.js'] = 'config/nuxt.js'
+    // if (this.answers.server !== 'none') {
+    //   if (this.answers.server === 'adonis') {
+    //     const files = {}
+    //     for (const action of actions) {
+    //       const options = { cwd: join(rootDir, action.templateDir), dot: true }
+    //       for (const file of glob.sync(`*`, options)) {
+    //         files[file] = `resources/${file}`
+    //       }
+    //     }
+    //     files['nuxt.config.js'] = 'config/nuxt.js'
 
-        actions.push({
-          type: 'move',
-          patterns: files
-        })
-      }
-      actions.push({
-        type: 'add',
-        files: '**',
-        templateDir: `template/frameworks/${this.answers.server}`
-      })
-    }
+    //     actions.push({
+    //       type: 'move',
+    //       patterns: files
+    //     })
+    //   }
+    //   actions.push({
+    //     type: 'add',
+    //     files: '**',
+    //     templateDir: `template/frameworks/${this.answers.server}`
+    //   })
+    // }
 
-    actions.push({
-      type: 'add',
-      files: '*',
-      filters: {
-        '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")',
-        '.env': 'features.includes("dotenv")',
-        '_stylelint.config.js': 'linter.includes("stylelint")'
-      }
-    })
+    // actions.push({
+    //   type: 'add',
+    //   files: '*',
+    //   filters: {
+    //     '_.eslintrc.js': 'linter.includes("eslint")',
+        // '.prettierrc': 'linter.includes("prettier")',
+        // 'jsconfig.json': 'devTools.includes("jsconfig.json")',
+        // '.env': 'features.includes("dotenv")',
+        // '_stylelint.config.js': 'linter.includes("stylelint")'
+    //   }
+    // })
 
     actions.push({
       type: 'move',
@@ -110,7 +110,7 @@ module.exports = {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
         '_.eslintrc.js': '.eslintrc.js',
-        '_stylelint.config.js': 'stylelint.config.js'
+        // '_stylelint.config.js': 'stylelint.config.js'
       }
     })
 
