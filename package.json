@@ -21,7 +21,7 @@
     "cross-spawn": "^7.0.1",
     "envinfo": "^7.5.0",
     "glob": "^7.1.6",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "sao": "^1.7.0",
     "superb": "^4.0.0",
     "validate-npm-package-name": "^3.0.0"
